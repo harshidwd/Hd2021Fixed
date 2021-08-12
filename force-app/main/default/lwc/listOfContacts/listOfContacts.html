@@ -1,0 +1,19 @@
+<template>
+    <lightning-card>
+        <template if:true={myCons.data}> 
+            <template for:each={myCons.data} for:item="con">
+                <div key={con.Id}> First Name: {con.FirstName} <br>
+                    Last Name: {con.LastName} <br> <br>          
+                </div>
+ </template> 
+        </template> 
+        <template if:true={myCons.error}> Some Error! 
+        </template> 
+    <lightning-card>
+        <c-new-Contact oninsert={handleInsert}></c-new-Contact>
+    </lightning-card>
+
+     <lightning-button label="Click to view contacts" onclick={handleClick}></lightning-button>
+
+   </lightning-card>
+</template>
